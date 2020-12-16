@@ -19,7 +19,6 @@ const CountryCards = ({countries, currentPage}) =>{
     return(
         <div>
             {
-                
                 <section className="grid" >
                     {currentFiveCountries.map((country) =>{
                         const {numericCode, name, population, region, capital, languages, flag} = country;

@@ -11,7 +11,6 @@ body{
   background-image: url('https://blog.tours4fun.com/wp-content/uploads/2016/04/flags-of-the-world-1000x600.jpg') ;
   background-color: #202D36;
   color: #fff;
-  /* padding: 20px; */
 }
 
 img{
@@ -95,6 +94,42 @@ img{
   font-weight: 300;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 15px;
+  padding: 10px;
+}
+
+.pagination-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  transition: background-color .2s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color: rgb(168, 181, 235);
+}
+
+.pagination-container a.active {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #7cbddb;
+}
+
+.pagination-container a.disabled { 
+  opacity: 0.2;
+}
+.pagination-container a:hover:not(.active) {background-color: rgb(238, 238, 238);}
+
 @media (min-width: 640px){
   .grid{
     grid-template-columns: repeat(2, 1fr);
@@ -135,38 +170,3 @@ img{
   }
 }
 
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-weight: 500;
-  font-size: 15px;
-  margin: 15px;
-  padding: 10px;
-}
-
-.pagination-container a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  height: 40px;
-  width: 40px;
-  text-decoration: none;
-  transition: background-color .2s;
-  border: 1px solid #ddd;
-  cursor: pointer;
-  background-color: rgb(168, 181, 235);
-}
-
-.pagination-container a.active {
-  background-color: #007bff;
-  color: white;
-  border: 1px solid #7cbddb;
-}
-
-.pagination-container a.disabled { 
-  opacity: 0.2;
-}
-.pagination-container a:hover:not(.active) {background-color: rgb(238, 238, 238);}
