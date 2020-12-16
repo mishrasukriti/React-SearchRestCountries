@@ -1,6 +1,6 @@
 import React from "react"
 
-const Filter = ()=>{
+const Filter = ({handleSearch})=>{
 
     return(
         <section className="filter" >
@@ -9,7 +9,7 @@ const Filter = ()=>{
             </form> */}
 
             <form >
-                <input type="search" name="search" id="search" placeholder="Search for a country" />
+                <input type="search" name="search" id="search" placeholder="Search for a country" onChange={handleSearch} />
             </form>
 
             

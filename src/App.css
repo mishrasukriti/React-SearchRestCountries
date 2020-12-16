@@ -1,17 +1,4 @@
 
-/* .select-form{
-  margin-top:50px;
-  margin-bottom:50px;
-  width:160px;
-  margin-left:50px
-}
-
-.selectDiv{
-  justify-content: end;
-  font-size: medium;
-  margin-bottom: 2rem;
-} */
-
 
 * {
   margin: 0;
@@ -21,6 +8,7 @@
 
 body{
   font-family: 'Nunito Sans', sans-serif;
+  background-image: url('https://blog.tours4fun.com/wp-content/uploads/2016/04/flags-of-the-world-1000x600.jpg') ;
   background-color: #202D36;
   color: #fff;
   /* padding: 20px; */
@@ -35,7 +23,7 @@ img{
   display:flex;
   align-items: center;
   justify-content: center;
-  background-color: #2b3747;
+  background-color: #1e0579;
   padding: 10px 20px;
 }
 
@@ -52,17 +40,11 @@ img{
   padding: 20px;
 }
 
-/* filter .form-control{
-  width: 100%;
-} */
-
 .filter  input{
-  background-color: #2b3743;
   border: none;
   outline: none;
   padding: 8px;
   border-radius: 5px;
-  color: #fff;
   font-family: inherit;
   letter-spacing: 0.5px;
   width: 100%;
@@ -75,17 +57,6 @@ img{
 
 
 
-/* .filter .region-filter select{
-  background-color: #2b3743;
-  border: none;
-  padding: 12px;
-  border-radius: 5px;
-  color: #fff;
-  font-family: inherit;
-  width: 200px;
-} */
-
-/** Grid*/
 .grid{
   display: grid;
   grid-template-columns: 1fr;
@@ -93,26 +64,34 @@ img{
   padding: 20px;
 }
 
+.grid  .card{
+  height: auto;
+  background: rgb(227,231,143);
+  background: linear-gradient(90deg, rgba(227,231,143,1) 0%, rgba(37,37,40,1) 75%, rgba(31,34,34,1) 100%);
+}
+
 .grid article img{
   border-radius: 5px 5px 0 0;
 }
 
 .grid .details{
-  background-color: #2b3743;
   padding: 40px 20px;
   margin-top: -20px;
   border-radius: 0 0 5px 5px;
+  text-align: center;
 }
 
-.grid .details h3{
+.grid h3{
+  padding-top: 0px;
   padding-bottom: 10px;
+  font-size: 24px; text-align:center; background-color:black; color:white;
 }
 
 .grid .details h4{
   padding-bottom: 5px;
 }
 
-.grid .details h4 span{
+.grid .details h5 span{
   font-weight: 300;
 }
 
@@ -151,8 +130,43 @@ img{
   }
 
   .grid{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 60px;
   }
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 15px;
+  padding: 10px;
+}
+
+.pagination-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  transition: background-color .2s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background-color: rgb(168, 181, 235);
+}
+
+.pagination-container a.active {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #7cbddb;
+}
+
+.pagination-container a.disabled { 
+  opacity: 0.2;
+}
+.pagination-container a:hover:not(.active) {background-color: rgb(238, 238, 238);}

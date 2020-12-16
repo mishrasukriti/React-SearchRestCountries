@@ -1,6 +1,4 @@
-// import logo from './logo.svg';
 import React, {useEffect, useState} from  'react';
-// import ReactDOM from 'react-dom';
 
 import './App.css';
 import PaginationBar from './components/PaginationBar';
@@ -11,8 +9,8 @@ import CountryCards from './components/CountryCards';
 
 function App(){
   const [countries, setCountries] = useState([]);
-  // const [countryCount, setCountryCount] = useState(0);
-  const [pageNumber, setPageNumber] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchText, setSearchText] = useState('')
   
 
   function dataFetch() {
@@ -29,18 +27,31 @@ function App(){
   dataFetch()
   }, [])
 
+
+  const handleSearch = (e)=>{
+    if(e.target.value === null || e.target.value === undefined || e.target.value === '') {
+      dataFetch();
+      return;
+    }
+    setSearchText(e.target.value);
+    const filteredCountries = countries.filter(country =>
+      JSON.stringify(country).toLowerCase().includes(searchText.toLowerCase())
+    )
+    if(filteredCountries.length !== 0) {
+      setCountries(filteredCountries);
+    }
+  }
+
   return (
+    
     <div>
     
-    {/* {countries.map((country, index) => (
-      <CountryCard  key={index} country={country}/>
-    ))} */}
 
       <Header/>
-      <Filter/>
+      <Filter handleSearch={handleSearch}/>
       
-      <CountryCards countries={countries} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
-      <PaginationBar countries={countries} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <CountryCards countries={countries} currentPage={currentPage} />
+      <PaginationBar countries={countries} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
 
     </div>
   )
@@ -48,5 +59,4 @@ function App(){
 }
 
 
-// ReactDOM.render(<App />, document.getElementById('root'));
 export default App;
