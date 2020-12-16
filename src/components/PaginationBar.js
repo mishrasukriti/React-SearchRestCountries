@@ -66,6 +66,7 @@ function PaginationBar({countries, currentPage, setCurrentPage}) {
 
     setArrOfCurrButtons(tempNumberOfPages)
     setCurrentPage(currentButton)
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [currentButton])
 
 
